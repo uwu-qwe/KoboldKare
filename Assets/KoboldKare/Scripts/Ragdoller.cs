@@ -31,6 +31,7 @@ public class Ragdoller : MonoBehaviourPun, IPunObservable, ISavable, IOnPhotonVi
     private PositionPacket nextPacket;
 
     private Kobold kobold;
+    private PlayerPossession InputController => kobold.GetComponentInChildren<PlayerPossession>();
 
     private LODGroup group;
     
@@ -184,7 +185,7 @@ public class Ragdoller : MonoBehaviourPun, IPunObservable, ISavable, IOnPhotonVi
 
         if (ragdollCount > 0 && !ragdolled) {
             Ragdoll();
-        } else if (ragdollCount == 0 && ragdolled) {
+        } else if (ragdollCount == 0 && ragdolled && !InputController.chatInput.enabled) {
             StandUp();
         }
     }
@@ -199,7 +200,7 @@ public class Ragdoller : MonoBehaviourPun, IPunObservable, ISavable, IOnPhotonVi
         
         if (ragdollCount > 0 && !ragdolled) {
             Ragdoll();
-        } else if (ragdollCount == 0 && ragdolled) {
+        } else if (ragdollCount == 0 && ragdolled && !InputController.chatInput.enabled) {
             StandUp();
         }
     }
