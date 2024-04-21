@@ -185,7 +185,7 @@ public class Ragdoller : MonoBehaviourPun, IPunObservable, ISavable, IOnPhotonVi
 
         if (ragdollCount > 0 && !ragdolled) {
             Ragdoll();
-        } else if (ragdollCount == 0 && ragdolled && !InputController.chatInput.enabled) {
+        } else if (ragdollCount == 0 && ragdolled && !InputController.chatGroup.interactable) {
             StandUp();
         }
     }
@@ -200,7 +200,7 @@ public class Ragdoller : MonoBehaviourPun, IPunObservable, ISavable, IOnPhotonVi
         
         if (ragdollCount > 0 && !ragdolled) {
             Ragdoll();
-        } else if (ragdollCount == 0 && ragdolled && !InputController.chatInput.enabled) {
+        } else if (ragdollCount == 0 && ragdolled && !InputController.chatGroup.interactable) {
             StandUp();
         }
     }
